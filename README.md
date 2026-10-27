@@ -102,51 +102,59 @@ Run these commands from the project directory. Each command saves a ZIP package 
 ### 1.2.a Check whether Conda is available
 In your Ubuntu terminal, run:
 
-</> Bash
+```Bash
 conda --version
-
+```
 - If you see a version number, Conda is available. Continue to Step 2.
 - If you see conda: command not found, skip to Step 3.
 
 ### Step 2  Install NCBI Datasets
 If Step 1 showed that Conda is available, run:
 
-</> Bash
+```Bash
 conda activate snippy-env
-
+```
 Then install NCBI Datasets into that environment:
-</> Bash
+
+```Bash
 conda install -c conda-forge ncbi-datasets-cli
+```
 
 If Conda asks you to confirm the installation, type y and press Enter.
 
 ### Step 3 — Confirm the installation
 Once installation finishes, run:
-</> Bash
+
+```Bash
 datasets --version
+```
 
 You should see a version number rather than command not found.
 If that works, verify that your project directory is correct:
-</> Bash
+
+```Bash
 cd ~/phylogenetic_tree_project
 mkdir -p results/genome_downloads
+```
 
 ### Now test just one genome download first:
-</> Bash
+
+```Bash
 datasets download genome accession GCF_000742755.1 \
   --include genome \
   --filename results/genome_downloads/KPPR1.zip
+```
 ### Check whether the ZIP file exists:
-</> Bash
+``` Bash
 ls -lh results/genome_downloads/KPPR1.zip
-
+```
 ### If the file is listed with a nonzero size, the first download appears to have succeeded. We can then download the remaining nine genomes.
 
 ### if all works, then run 
 ```bash
 cd ~/phylogenetic_tree_project
 mkdir -p results/genome_downloads
-
+```
 datasets download genome accession GCF_000742755.1 --include genome --filename results/genome_downloads/KPPR1.zip
 datasets download genome accession GCF_001455995.1 --include genome --filename results/genome_downloads/MS6671.zip
 datasets download genome accession GCF_000009885.1 --include genome --filename results/genome_downloads/NTUH-K2044.zip
