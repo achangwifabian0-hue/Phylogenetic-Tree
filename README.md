@@ -96,8 +96,53 @@ This tutorial uses ten *K. pneumoniae* assemblies: KPPR1 is the reference, and t
 
 ### 1.2 Download the ten NCBI Datasets packages
 
-Run these commands from the project directory. Each command saves a ZIP package with a distinct filename, so downloads do not overwrite one another.
+Run these commands from the project directory. Each command saves a ZIP package with a distinct filename, so downloads do not overwrite one another. but first do the checks below 
 
+
+### 1.2.a Check whether Conda is available
+In your Ubuntu terminal, run:
+
+</> Bash
+conda --version
+
+- If you see a version number, Conda is available. Continue to Step 2.
+- If you see conda: command not found, skip to Step 3.
+
+### Step 2  Install NCBI Datasets
+If Step 1 showed that Conda is available, run:
+
+</> Bash
+conda activate snippy-env
+
+Then install NCBI Datasets into that environment:
+</> Bash
+conda install -c conda-forge ncbi-datasets-cli
+
+If Conda asks you to confirm the installation, type y and press Enter.
+
+### Step 3 — Confirm the installation
+Once installation finishes, run:
+</> Bash
+datasets --version
+
+You should see a version number rather than command not found.
+If that works, verify that your project directory is correct:
+</> Bash
+cd ~/phylogenetic_tree_project
+mkdir -p results/genome_downloads
+
+### Now test just one genome download first:
+</> Bash
+datasets download genome accession GCF_000742755.1 \
+  --include genome \
+  --filename results/genome_downloads/KPPR1.zip
+### Check whether the ZIP file exists:
+</> Bash
+ls -lh results/genome_downloads/KPPR1.zip
+
+### If the file is listed with a nonzero size, the first download appears to have succeeded. We can then download the remaining nine genomes.
+
+### if all works, then run 
 ```bash
 cd ~/phylogenetic_tree_project
 mkdir -p results/genome_downloads
