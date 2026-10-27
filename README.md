@@ -151,10 +151,10 @@ ls -lh results/genome_downloads/KPPR1.zip
 ### If the file is listed with a nonzero size, the first download appears to have succeeded. We can then download the remaining nine genomes.
 
 ### if all works, then run 
+
 ```bash
 cd ~/phylogenetic_tree_project
 mkdir -p results/genome_downloads
-```
 datasets download genome accession GCF_000742755.1 --include genome --filename results/genome_downloads/KPPR1.zip
 datasets download genome accession GCF_001455995.1 --include genome --filename results/genome_downloads/MS6671.zip
 datasets download genome accession GCF_000009885.1 --include genome --filename results/genome_downloads/NTUH-K2044.zip
