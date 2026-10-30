@@ -618,6 +618,9 @@ This course was developed from learning and practical experience in phylogenetic
 
 - Fabian Achangwi
 
+  ## Contributor
+  Edson Kimario
+
 ## Course facilitators
 
 - Ndeye Awa Ndiaye
